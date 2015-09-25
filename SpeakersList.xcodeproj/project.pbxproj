@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CFFD502A1BB5AEE2003DA319 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD50291BB5AEE2003DA319 /* AppDelegate.swift */; };
+		CFFD502C1BB5AEE2003DA319 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD502B1BB5AEE2003DA319 /* ViewController.swift */; };
+		CFFD502F1BB5AEE2003DA319 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFD502D1BB5AEE2003DA319 /* Main.storyboard */; };
+		CFFD50311BB5AEE3003DA319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFFD50301BB5AEE3003DA319 /* Assets.xcassets */; };
+		CFFD50341BB5AEE3003DA319 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFD50321BB5AEE3003DA319 /* LaunchScreen.storyboard */; };
+		CFFD503F1BB5AEE3003DA319 /* SpeakersListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD503E1BB5AEE3003DA319 /* SpeakersListTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CFFD503B1BB5AEE3003DA319 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFFD501E1BB5AEE2003DA319 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFFD50251BB5AEE2003DA319;
+			remoteInfo = SpeakersList;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CFFD50261BB5AEE2003DA319 /* SpeakersList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakersList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFFD50291BB5AEE2003DA319 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CFFD502B1BB5AEE2003DA319 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CFFD502E1BB5AEE2003DA319 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CFFD50301BB5AEE3003DA319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CFFD50331BB5AEE3003DA319 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CFFD50351BB5AEE3003DA319 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFFD503A1BB5AEE3003DA319 /* SpeakersListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeakersListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFFD503E1BB5AEE3003DA319 /* SpeakersListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersListTests.swift; sourceTree = "<group>"; };
+		CFFD50401BB5AEE3003DA319 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CFFD50231BB5AEE2003DA319 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFFD50371BB5AEE3003DA319 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CFFD501D1BB5AEE2003DA319 = {
+			isa = PBXGroup;
+			children = (
+				CFFD50281BB5AEE2003DA319 /* SpeakersList */,
+				CFFD503D1BB5AEE3003DA319 /* SpeakersListTests */,
+				CFFD50271BB5AEE2003DA319 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CFFD50271BB5AEE2003DA319 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFFD50261BB5AEE2003DA319 /* SpeakersList.app */,
+				CFFD503A1BB5AEE3003DA319 /* SpeakersListTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CFFD50281BB5AEE2003DA319 /* SpeakersList */ = {
+			isa = PBXGroup;
+			children = (
+				CFFD50291BB5AEE2003DA319 /* AppDelegate.swift */,
+				CFFD502B1BB5AEE2003DA319 /* ViewController.swift */,
+				CFFD502D1BB5AEE2003DA319 /* Main.storyboard */,
+				CFFD50301BB5AEE3003DA319 /* Assets.xcassets */,
+				CFFD50321BB5AEE3003DA319 /* LaunchScreen.storyboard */,
+				CFFD50351BB5AEE3003DA319 /* Info.plist */,
+			);
+			path = SpeakersList;
+			sourceTree = "<group>";
+		};
+		CFFD503D1BB5AEE3003DA319 /* SpeakersListTests */ = {
+			isa = PBXGroup;
+			children = (
+				CFFD503E1BB5AEE3003DA319 /* SpeakersListTests.swift */,
+				CFFD50401BB5AEE3003DA319 /* Info.plist */,
+			);
+			path = SpeakersListTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CFFD50251BB5AEE2003DA319 /* SpeakersList */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFFD50431BB5AEE3003DA319 /* Build configuration list for PBXNativeTarget "SpeakersList" */;
+			buildPhases = (
+				CFFD50221BB5AEE2003DA319 /* Sources */,
+				CFFD50231BB5AEE2003DA319 /* Frameworks */,
+				CFFD50241BB5AEE2003DA319 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpeakersList;
+			productName = SpeakersList;
+			productReference = CFFD50261BB5AEE2003DA319 /* SpeakersList.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CFFD50391BB5AEE3003DA319 /* SpeakersListTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFFD50461BB5AEE3003DA319 /* Build configuration list for PBXNativeTarget "SpeakersListTests" */;
+			buildPhases = (
+				CFFD50361BB5AEE3003DA319 /* Sources */,
+				CFFD50371BB5AEE3003DA319 /* Frameworks */,
+				CFFD50381BB5AEE3003DA319 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFFD503C1BB5AEE3003DA319 /* PBXTargetDependency */,
+			);
+			name = SpeakersListTests;
+			productName = SpeakersListTests;
+			productReference = CFFD503A1BB5AEE3003DA319 /* SpeakersListTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CFFD501E1BB5AEE2003DA319 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = PoWWaU;
+				TargetAttributes = {
+					CFFD50251BB5AEE2003DA319 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					CFFD50391BB5AEE3003DA319 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = CFFD50251BB5AEE2003DA319;
+					};
+				};
+			};
+			buildConfigurationList = CFFD50211BB5AEE2003DA319 /* Build configuration list for PBXProject "SpeakersList" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CFFD501D1BB5AEE2003DA319;
+			productRefGroup = CFFD50271BB5AEE2003DA319 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CFFD50251BB5AEE2003DA319 /* SpeakersList */,
+				CFFD50391BB5AEE3003DA319 /* SpeakersListTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CFFD50241BB5AEE2003DA319 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFFD50341BB5AEE3003DA319 /* LaunchScreen.storyboard in Resources */,
+				CFFD50311BB5AEE3003DA319 /* Assets.xcassets in Resources */,
+				CFFD502F1BB5AEE2003DA319 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFFD50381BB5AEE3003DA319 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CFFD50221BB5AEE2003DA319 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFFD502C1BB5AEE2003DA319 /* ViewController.swift in Sources */,
+				CFFD502A1BB5AEE2003DA319 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFFD50361BB5AEE3003DA319 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFFD503F1BB5AEE3003DA319 /* SpeakersListTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CFFD503C1BB5AEE3003DA319 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFFD50251BB5AEE2003DA319 /* SpeakersList */;
+			targetProxy = CFFD503B1BB5AEE3003DA319 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CFFD502D1BB5AEE2003DA319 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFFD502E1BB5AEE2003DA319 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CFFD50321BB5AEE3003DA319 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFFD50331BB5AEE3003DA319 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CFFD50411BB5AEE3003DA319 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CFFD50421BB5AEE3003DA319 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CFFD50441BB5AEE3003DA319 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SpeakersList/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.powwau.SpeakersList;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CFFD50451BB5AEE3003DA319 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SpeakersList/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.powwau.SpeakersList;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CFFD50471BB5AEE3003DA319 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SpeakersListTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.powwau.SpeakersListTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpeakersList.app/SpeakersList";
+			};
+			name = Debug;
+		};
+		CFFD50481BB5AEE3003DA319 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SpeakersListTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.powwau.SpeakersListTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpeakersList.app/SpeakersList";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFFD50211BB5AEE2003DA319 /* Build configuration list for PBXProject "SpeakersList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFFD50411BB5AEE3003DA319 /* Debug */,
+				CFFD50421BB5AEE3003DA319 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFFD50431BB5AEE3003DA319 /* Build configuration list for PBXNativeTarget "SpeakersList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFFD50441BB5AEE3003DA319 /* Debug */,
+				CFFD50451BB5AEE3003DA319 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CFFD50461BB5AEE3003DA319 /* Build configuration list for PBXNativeTarget "SpeakersListTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFFD50471BB5AEE3003DA319 /* Debug */,
+				CFFD50481BB5AEE3003DA319 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CFFD501E1BB5AEE2003DA319 /* Project object */;
+}
