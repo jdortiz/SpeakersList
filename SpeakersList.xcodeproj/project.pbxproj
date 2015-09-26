@@ -13,6 +13,11 @@
 		CFFD50311BB5AEE3003DA319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFFD50301BB5AEE3003DA319 /* Assets.xcassets */; };
 		CFFD50341BB5AEE3003DA319 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFD50321BB5AEE3003DA319 /* LaunchScreen.storyboard */; };
 		CFFD503F1BB5AEE3003DA319 /* SpeakersListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD503E1BB5AEE3003DA319 /* SpeakersListTests.swift */; };
+		CFFD504A1BB5B7DC003DA319 /* ShowAllSpeakersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD50491BB5B7DC003DA319 /* ShowAllSpeakersInteractor.swift */; settings = {ASSET_TAGS = (); }; };
+		CFFD504C1BB6CF4F003DA319 /* EntityGatewayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD504B1BB6CF4F003DA319 /* EntityGatewayProtocol.swift */; settings = {ASSET_TAGS = (); }; };
+		CFFD504E1BB6D08E003DA319 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD504D1BB6D08E003DA319 /* Speaker.swift */; settings = {ASSET_TAGS = (); }; };
+		CFFD50501BB7022A003DA319 /* SpeakersListPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD504F1BB7022A003DA319 /* SpeakersListPresenterProtocol.swift */; settings = {ASSET_TAGS = (); }; };
+		CFFD50521BB703D9003DA319 /* SpeakerDisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD50511BB703D9003DA319 /* SpeakerDisplayData.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 		CFFD503A1BB5AEE3003DA319 /* SpeakersListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeakersListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFD503E1BB5AEE3003DA319 /* SpeakersListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersListTests.swift; sourceTree = "<group>"; };
 		CFFD50401BB5AEE3003DA319 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFFD50491BB5B7DC003DA319 /* ShowAllSpeakersInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAllSpeakersInteractor.swift; sourceTree = "<group>"; };
+		CFFD504B1BB6CF4F003DA319 /* EntityGatewayProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityGatewayProtocol.swift; sourceTree = "<group>"; };
+		CFFD504D1BB6D08E003DA319 /* Speaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
+		CFFD504F1BB7022A003DA319 /* SpeakersListPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakersListPresenterProtocol.swift; sourceTree = "<group>"; };
+		CFFD50511BB703D9003DA319 /* SpeakerDisplayData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerDisplayData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +93,11 @@
 				CFFD50301BB5AEE3003DA319 /* Assets.xcassets */,
 				CFFD50321BB5AEE3003DA319 /* LaunchScreen.storyboard */,
 				CFFD50351BB5AEE3003DA319 /* Info.plist */,
+				CFFD50491BB5B7DC003DA319 /* ShowAllSpeakersInteractor.swift */,
+				CFFD504B1BB6CF4F003DA319 /* EntityGatewayProtocol.swift */,
+				CFFD504D1BB6D08E003DA319 /* Speaker.swift */,
+				CFFD504F1BB7022A003DA319 /* SpeakersListPresenterProtocol.swift */,
+				CFFD50511BB703D9003DA319 /* SpeakerDisplayData.swift */,
 			);
 			path = SpeakersList;
 			sourceTree = "<group>";
@@ -196,8 +211,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFFD504A1BB5B7DC003DA319 /* ShowAllSpeakersInteractor.swift in Sources */,
 				CFFD502C1BB5AEE2003DA319 /* ViewController.swift in Sources */,
+				CFFD50521BB703D9003DA319 /* SpeakerDisplayData.swift in Sources */,
+				CFFD504E1BB6D08E003DA319 /* Speaker.swift in Sources */,
 				CFFD502A1BB5AEE2003DA319 /* AppDelegate.swift in Sources */,
+				CFFD50501BB7022A003DA319 /* SpeakersListPresenterProtocol.swift in Sources */,
+				CFFD504C1BB6CF4F003DA319 /* EntityGatewayProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
