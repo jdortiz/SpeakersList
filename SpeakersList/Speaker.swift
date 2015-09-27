@@ -13,6 +13,6 @@ import Foundation
 struct Speaker {
     let name: String
     let title: String
-    let description: String
+    let synopsis: String
     let dateSubmitted: NSDate
 }
