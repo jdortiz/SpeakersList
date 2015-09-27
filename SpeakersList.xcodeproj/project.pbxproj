@@ -69,6 +69,88 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF810FAF1BB8AD3C00AD15D5 /* ShowSpeakers */ = {
+			isa = PBXGroup;
+			children = (
+				CFFD50491BB5B7DC003DA319 /* ShowAllSpeakersInteractor.swift */,
+			);
+			name = ShowSpeakers;
+			sourceTree = "<group>";
+		};
+		CF810FB01BB8AD6C00AD15D5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CFFD504D1BB6D08E003DA319 /* Speaker.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		CF810FB11BB8AD8100AD15D5 /* DeliveryMechanismBoundary */ = {
+			isa = PBXGroup;
+			children = (
+				CFFD504F1BB7022A003DA319 /* SpeakersListPresenterProtocol.swift */,
+				CFFD50511BB703D9003DA319 /* SpeakerDisplayData.swift */,
+			);
+			name = DeliveryMechanismBoundary;
+			sourceTree = "<group>";
+		};
+		CF810FB21BB8AE7600AD15D5 /* EntityGateway */ = {
+			isa = PBXGroup;
+			children = (
+				CFFD504B1BB6CF4F003DA319 /* EntityGatewayProtocol.swift */,
+			);
+			name = EntityGateway;
+			sourceTree = "<group>";
+		};
+		CF810FB31BB8AEA800AD15D5 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CFFD50351BB5AEE3003DA319 /* Info.plist */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CF810FB41BB8AEE300AD15D5 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				CF810FAF1BB8AD3C00AD15D5 /* ShowSpeakers */,
+			);
+			name = UseCases;
+			sourceTree = "<group>";
+		};
+		CF810FB51BB8AF3800AD15D5 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CFFD50401BB5AEE3003DA319 /* Info.plist */,
+				CFFD50531BB70CFB003DA319 /* SpeakersListTests-Bridging-Header.h */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CF810FB61BB8AF4500AD15D5 /* DeliveryMechanismBoundary */ = {
+			isa = PBXGroup;
+			children = (
+				CF810FAD1BB81B2F00AD15D5 /* SpeakerDisplayDataTests.swift */,
+			);
+			name = DeliveryMechanismBoundary;
+			sourceTree = "<group>";
+		};
+		CF810FB71BB8AF6D00AD15D5 /* ShowAllSpeakers */ = {
+			isa = PBXGroup;
+			children = (
+				CFFD50541BB70CFB003DA319 /* ShowAllSpeakersInteractorTests.swift */,
+			);
+			name = ShowAllSpeakers;
+			sourceTree = "<group>";
+		};
+		CF810FB81BB8AF7C00AD15D5 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				CF810FB71BB8AF6D00AD15D5 /* ShowAllSpeakers */,
+			);
+			name = UseCases;
+			sourceTree = "<group>";
+		};
 		CFFD501D1BB5AEE2003DA319 = {
 			isa = PBXGroup;
 			children = (
@@ -92,15 +174,14 @@
 			children = (
 				CFFD50291BB5AEE2003DA319 /* AppDelegate.swift */,
 				CFFD502B1BB5AEE2003DA319 /* ViewController.swift */,
+				CFFD50321BB5AEE3003DA319 /* LaunchScreen.storyboard */,
 				CFFD502D1BB5AEE2003DA319 /* Main.storyboard */,
 				CFFD50301BB5AEE3003DA319 /* Assets.xcassets */,
-				CFFD50321BB5AEE3003DA319 /* LaunchScreen.storyboard */,
-				CFFD50351BB5AEE3003DA319 /* Info.plist */,
-				CFFD50491BB5B7DC003DA319 /* ShowAllSpeakersInteractor.swift */,
-				CFFD504B1BB6CF4F003DA319 /* EntityGatewayProtocol.swift */,
-				CFFD504D1BB6D08E003DA319 /* Speaker.swift */,
-				CFFD504F1BB7022A003DA319 /* SpeakersListPresenterProtocol.swift */,
-				CFFD50511BB703D9003DA319 /* SpeakerDisplayData.swift */,
+				CF810FB11BB8AD8100AD15D5 /* DeliveryMechanismBoundary */,
+				CF810FB41BB8AEE300AD15D5 /* UseCases */,
+				CF810FB21BB8AE7600AD15D5 /* EntityGateway */,
+				CF810FB01BB8AD6C00AD15D5 /* Entities */,
+				CF810FB31BB8AEA800AD15D5 /* SupportingFiles */,
 			);
 			path = SpeakersList;
 			sourceTree = "<group>";
@@ -108,10 +189,9 @@
 		CFFD503D1BB5AEE3003DA319 /* SpeakersListTests */ = {
 			isa = PBXGroup;
 			children = (
-				CFFD50401BB5AEE3003DA319 /* Info.plist */,
-				CFFD50541BB70CFB003DA319 /* ShowAllSpeakersInteractorTests.swift */,
-				CFFD50531BB70CFB003DA319 /* SpeakersListTests-Bridging-Header.h */,
-				CF810FAD1BB81B2F00AD15D5 /* SpeakerDisplayDataTests.swift */,
+				CF810FB61BB8AF4500AD15D5 /* DeliveryMechanismBoundary */,
+				CF810FB81BB8AF7C00AD15D5 /* UseCases */,
+				CF810FB51BB8AF3800AD15D5 /* SupportingFiles */,
 			);
 			path = SpeakersListTests;
 			sourceTree = "<group>";
