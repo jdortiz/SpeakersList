@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF810FAE1BB81B2F00AD15D5 /* SpeakerDisplayDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF810FAD1BB81B2F00AD15D5 /* SpeakerDisplayDataTests.swift */; settings = {ASSET_TAGS = (); }; };
 		CFFD502A1BB5AEE2003DA319 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD50291BB5AEE2003DA319 /* AppDelegate.swift */; };
 		CFFD502C1BB5AEE2003DA319 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD502B1BB5AEE2003DA319 /* ViewController.swift */; };
 		CFFD502F1BB5AEE2003DA319 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFD502D1BB5AEE2003DA319 /* Main.storyboard */; };
 		CFFD50311BB5AEE3003DA319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFFD50301BB5AEE3003DA319 /* Assets.xcassets */; };
 		CFFD50341BB5AEE3003DA319 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFD50321BB5AEE3003DA319 /* LaunchScreen.storyboard */; };
-		CFFD503F1BB5AEE3003DA319 /* SpeakersListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD503E1BB5AEE3003DA319 /* SpeakersListTests.swift */; };
+		CFFD504A1BB5B7DC003DA319 /* ShowAllSpeakersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD50491BB5B7DC003DA319 /* ShowAllSpeakersInteractor.swift */; settings = {ASSET_TAGS = (); }; };
+		CFFD504C1BB6CF4F003DA319 /* EntityGatewayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD504B1BB6CF4F003DA319 /* EntityGatewayProtocol.swift */; settings = {ASSET_TAGS = (); }; };
+		CFFD504E1BB6D08E003DA319 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD504D1BB6D08E003DA319 /* Speaker.swift */; settings = {ASSET_TAGS = (); }; };
+		CFFD50501BB7022A003DA319 /* SpeakersListPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD504F1BB7022A003DA319 /* SpeakersListPresenterProtocol.swift */; settings = {ASSET_TAGS = (); }; };
+		CFFD50521BB703D9003DA319 /* SpeakerDisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD50511BB703D9003DA319 /* SpeakerDisplayData.swift */; settings = {ASSET_TAGS = (); }; };
+		CFFD50551BB70CFB003DA319 /* ShowAllSpeakersInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD50541BB70CFB003DA319 /* ShowAllSpeakersInteractorTests.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF810FAD1BB81B2F00AD15D5 /* SpeakerDisplayDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerDisplayDataTests.swift; sourceTree = "<group>"; };
 		CFFD50261BB5AEE2003DA319 /* SpeakersList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakersList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFD50291BB5AEE2003DA319 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFFD502B1BB5AEE2003DA319 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,8 +41,14 @@
 		CFFD50331BB5AEE3003DA319 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFFD50351BB5AEE3003DA319 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFFD503A1BB5AEE3003DA319 /* SpeakersListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeakersListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CFFD503E1BB5AEE3003DA319 /* SpeakersListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersListTests.swift; sourceTree = "<group>"; };
 		CFFD50401BB5AEE3003DA319 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFFD50491BB5B7DC003DA319 /* ShowAllSpeakersInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAllSpeakersInteractor.swift; sourceTree = "<group>"; };
+		CFFD504B1BB6CF4F003DA319 /* EntityGatewayProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityGatewayProtocol.swift; sourceTree = "<group>"; };
+		CFFD504D1BB6D08E003DA319 /* Speaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
+		CFFD504F1BB7022A003DA319 /* SpeakersListPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakersListPresenterProtocol.swift; sourceTree = "<group>"; };
+		CFFD50511BB703D9003DA319 /* SpeakerDisplayData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerDisplayData.swift; sourceTree = "<group>"; };
+		CFFD50531BB70CFB003DA319 /* SpeakersListTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpeakersListTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		CFFD50541BB70CFB003DA319 /* ShowAllSpeakersInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAllSpeakersInteractorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +96,11 @@
 				CFFD50301BB5AEE3003DA319 /* Assets.xcassets */,
 				CFFD50321BB5AEE3003DA319 /* LaunchScreen.storyboard */,
 				CFFD50351BB5AEE3003DA319 /* Info.plist */,
+				CFFD50491BB5B7DC003DA319 /* ShowAllSpeakersInteractor.swift */,
+				CFFD504B1BB6CF4F003DA319 /* EntityGatewayProtocol.swift */,
+				CFFD504D1BB6D08E003DA319 /* Speaker.swift */,
+				CFFD504F1BB7022A003DA319 /* SpeakersListPresenterProtocol.swift */,
+				CFFD50511BB703D9003DA319 /* SpeakerDisplayData.swift */,
 			);
 			path = SpeakersList;
 			sourceTree = "<group>";
@@ -90,8 +108,10 @@
 		CFFD503D1BB5AEE3003DA319 /* SpeakersListTests */ = {
 			isa = PBXGroup;
 			children = (
-				CFFD503E1BB5AEE3003DA319 /* SpeakersListTests.swift */,
 				CFFD50401BB5AEE3003DA319 /* Info.plist */,
+				CFFD50541BB70CFB003DA319 /* ShowAllSpeakersInteractorTests.swift */,
+				CFFD50531BB70CFB003DA319 /* SpeakersListTests-Bridging-Header.h */,
+				CF810FAD1BB81B2F00AD15D5 /* SpeakerDisplayDataTests.swift */,
 			);
 			path = SpeakersListTests;
 			sourceTree = "<group>";
@@ -140,6 +160,7 @@
 		CFFD501E1BB5AEE2003DA319 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = PoWWaU;
 				TargetAttributes = {
@@ -196,8 +217,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFFD504A1BB5B7DC003DA319 /* ShowAllSpeakersInteractor.swift in Sources */,
 				CFFD502C1BB5AEE2003DA319 /* ViewController.swift in Sources */,
+				CFFD50521BB703D9003DA319 /* SpeakerDisplayData.swift in Sources */,
+				CFFD504E1BB6D08E003DA319 /* Speaker.swift in Sources */,
 				CFFD502A1BB5AEE2003DA319 /* AppDelegate.swift in Sources */,
+				CFFD50501BB7022A003DA319 /* SpeakersListPresenterProtocol.swift in Sources */,
+				CFFD504C1BB6CF4F003DA319 /* EntityGatewayProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +231,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFFD503F1BB5AEE3003DA319 /* SpeakersListTests.swift in Sources */,
+				CF810FAE1BB81B2F00AD15D5 /* SpeakerDisplayDataTests.swift in Sources */,
+				CFFD50551BB70CFB003DA319 /* ShowAllSpeakersInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,10 +375,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SpeakersListTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.powwau.SpeakersListTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SpeakersListTests/SpeakersListTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpeakersList.app/SpeakersList";
 			};
 			name = Debug;
@@ -360,10 +390,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SpeakersListTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.powwau.SpeakersListTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SpeakersListTests/SpeakersListTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpeakersList.app/SpeakersList";
 			};
 			name = Release;
@@ -387,6 +419,7 @@
 				CFFD50451BB5AEE3003DA319 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CFFD50461BB5AEE3003DA319 /* Build configuration list for PBXNativeTarget "SpeakersListTests" */ = {
 			isa = XCConfigurationList;
@@ -395,6 +428,7 @@
 				CFFD50481BB5AEE3003DA319 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
