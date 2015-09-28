@@ -18,7 +18,7 @@ struct SpeakerDisplayData {
     let title: String
     let dateSubmitted: NSDate
 
-    // MARK: - Initializer
+    // MARK: - Initializers
 
     init(speaker: Speaker) {
         name = speaker.name

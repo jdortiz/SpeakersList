@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CF810FAE1BB81B2F00AD15D5 /* SpeakerDisplayDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF810FAD1BB81B2F00AD15D5 /* SpeakerDisplayDataTests.swift */; settings = {ASSET_TAGS = (); }; };
+		CF810FBA1BB9219400AD15D5 /* SpeakersListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF810FB91BB9219400AD15D5 /* SpeakersListPresenter.swift */; settings = {ASSET_TAGS = (); }; };
+		CF810FBC1BB9243900AD15D5 /* SpeakersListViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF810FBB1BB9243900AD15D5 /* SpeakersListViewProtocol.swift */; settings = {ASSET_TAGS = (); }; };
+		CF810FBF1BB9253000AD15D5 /* SpeakersListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF810FBE1BB9253000AD15D5 /* SpeakersListPresenterTests.swift */; settings = {ASSET_TAGS = (); }; };
 		CFFD502A1BB5AEE2003DA319 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD50291BB5AEE2003DA319 /* AppDelegate.swift */; };
 		CFFD502C1BB5AEE2003DA319 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD502B1BB5AEE2003DA319 /* ViewController.swift */; };
 		CFFD502F1BB5AEE2003DA319 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFD502D1BB5AEE2003DA319 /* Main.storyboard */; };
@@ -33,6 +36,9 @@
 
 /* Begin PBXFileReference section */
 		CF810FAD1BB81B2F00AD15D5 /* SpeakerDisplayDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerDisplayDataTests.swift; sourceTree = "<group>"; };
+		CF810FB91BB9219400AD15D5 /* SpeakersListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakersListPresenter.swift; sourceTree = "<group>"; };
+		CF810FBB1BB9243900AD15D5 /* SpeakersListViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakersListViewProtocol.swift; sourceTree = "<group>"; };
+		CF810FBE1BB9253000AD15D5 /* SpeakersListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakersListPresenterTests.swift; sourceTree = "<group>"; };
 		CFFD50261BB5AEE2003DA319 /* SpeakersList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakersList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFD50291BB5AEE2003DA319 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFFD502B1BB5AEE2003DA319 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +157,22 @@
 			name = UseCases;
 			sourceTree = "<group>";
 		};
+		CF810FBD1BB924F800AD15D5 /* SpeakersListPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				CF810FB91BB9219400AD15D5 /* SpeakersListPresenter.swift */,
+			);
+			name = SpeakersListPresenter;
+			sourceTree = "<group>";
+		};
+		CF810FC01BB9254000AD15D5 /* SpeakersListPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				CF810FBE1BB9253000AD15D5 /* SpeakersListPresenterTests.swift */,
+			);
+			name = SpeakersListPresenter;
+			sourceTree = "<group>";
+		};
 		CFFD501D1BB5AEE2003DA319 = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +204,8 @@
 				CF810FB21BB8AE7600AD15D5 /* EntityGateway */,
 				CF810FB01BB8AD6C00AD15D5 /* Entities */,
 				CF810FB31BB8AEA800AD15D5 /* SupportingFiles */,
+				CF810FBD1BB924F800AD15D5 /* SpeakersListPresenter */,
+				CF810FBB1BB9243900AD15D5 /* SpeakersListViewProtocol.swift */,
 			);
 			path = SpeakersList;
 			sourceTree = "<group>";
@@ -192,6 +216,7 @@
 				CF810FB61BB8AF4500AD15D5 /* DeliveryMechanismBoundary */,
 				CF810FB81BB8AF7C00AD15D5 /* UseCases */,
 				CF810FB51BB8AF3800AD15D5 /* SupportingFiles */,
+				CF810FC01BB9254000AD15D5 /* SpeakersListPresenter */,
 			);
 			path = SpeakersListTests;
 			sourceTree = "<group>";
@@ -297,8 +322,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF810FBA1BB9219400AD15D5 /* SpeakersListPresenter.swift in Sources */,
 				CFFD504A1BB5B7DC003DA319 /* ShowAllSpeakersInteractor.swift in Sources */,
 				CFFD502C1BB5AEE2003DA319 /* ViewController.swift in Sources */,
+				CF810FBC1BB9243900AD15D5 /* SpeakersListViewProtocol.swift in Sources */,
 				CFFD50521BB703D9003DA319 /* SpeakerDisplayData.swift in Sources */,
 				CFFD504E1BB6D08E003DA319 /* Speaker.swift in Sources */,
 				CFFD502A1BB5AEE2003DA319 /* AppDelegate.swift in Sources */,
@@ -311,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF810FBF1BB9253000AD15D5 /* SpeakersListPresenterTests.swift in Sources */,
 				CF810FAE1BB81B2F00AD15D5 /* SpeakerDisplayDataTests.swift in Sources */,
 				CFFD50551BB70CFB003DA319 /* ShowAllSpeakersInteractorTests.swift in Sources */,
 			);
