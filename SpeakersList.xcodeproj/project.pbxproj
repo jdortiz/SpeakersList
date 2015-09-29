@@ -13,6 +13,7 @@
 		CF810FBF1BB9253000AD15D5 /* SpeakersListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF810FBE1BB9253000AD15D5 /* SpeakersListPresenterTests.swift */; settings = {ASSET_TAGS = (); }; };
 		CF810FC61BB9623B00AD15D5 /* SpeakersTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF810FC51BB9623B00AD15D5 /* SpeakersTableViewControllerTests.swift */; settings = {ASSET_TAGS = (); }; };
 		CF810FC81BB9651A00AD15D5 /* SpeakersListEventHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF810FC71BB9651A00AD15D5 /* SpeakersListEventHandlerProtocol.swift */; settings = {ASSET_TAGS = (); }; };
+		CF810FCD1BBB0E0400AD15D5 /* SpeakerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF810FCC1BBB0E0400AD15D5 /* SpeakerTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		CFFD502A1BB5AEE2003DA319 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD50291BB5AEE2003DA319 /* AppDelegate.swift */; };
 		CFFD502C1BB5AEE2003DA319 /* SpeakersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD502B1BB5AEE2003DA319 /* SpeakersTableViewController.swift */; };
 		CFFD502F1BB5AEE2003DA319 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFD502D1BB5AEE2003DA319 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		CF810FBE1BB9253000AD15D5 /* SpeakersListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakersListPresenterTests.swift; sourceTree = "<group>"; };
 		CF810FC51BB9623B00AD15D5 /* SpeakersTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakersTableViewControllerTests.swift; sourceTree = "<group>"; };
 		CF810FC71BB9651A00AD15D5 /* SpeakersListEventHandlerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakersListEventHandlerProtocol.swift; sourceTree = "<group>"; };
+		CF810FCC1BBB0E0400AD15D5 /* SpeakerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerTableViewCell.swift; sourceTree = "<group>"; };
 		CFFD50261BB5AEE2003DA319 /* SpeakersList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakersList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFD50291BB5AEE2003DA319 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFFD502B1BB5AEE2003DA319 /* SpeakersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersTableViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				CFFD502B1BB5AEE2003DA319 /* SpeakersTableViewController.swift */,
+				CF810FCC1BBB0E0400AD15D5 /* SpeakerTableViewCell.swift */,
 				CF810FBB1BB9243900AD15D5 /* SpeakersListViewProtocol.swift */,
 				CFFD50321BB5AEE3003DA319 /* LaunchScreen.storyboard */,
 				CFFD502D1BB5AEE2003DA319 /* Main.storyboard */,
@@ -351,6 +354,7 @@
 				CFFD50521BB703D9003DA319 /* SpeakerDisplayData.swift in Sources */,
 				CFFD504E1BB6D08E003DA319 /* Speaker.swift in Sources */,
 				CFFD502A1BB5AEE2003DA319 /* AppDelegate.swift in Sources */,
+				CF810FCD1BBB0E0400AD15D5 /* SpeakerTableViewCell.swift in Sources */,
 				CFFD50501BB7022A003DA319 /* SpeakersListPresenterProtocol.swift in Sources */,
 				CFFD504C1BB6CF4F003DA319 /* EntityGatewayProtocol.swift in Sources */,
 				CF810FC81BB9651A00AD15D5 /* SpeakersListEventHandlerProtocol.swift in Sources */,

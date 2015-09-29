@@ -35,7 +35,7 @@ class SpeakersTableViewController: UITableViewController {
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(SpeakersTableViewController.speakerCellIdentifier, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(SpeakersTableViewController.speakerCellIdentifier, forIndexPath: indexPath) as! SpeakerTableViewCell
         eventHandler?.presentCell(cell, indexPath: indexPath)
         return cell
     }
