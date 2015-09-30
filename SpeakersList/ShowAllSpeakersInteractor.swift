@@ -24,10 +24,10 @@ class ShowAllSpeakersInteractor {
         self.entityGateway =  entityGateway
         self.presenter = presenter
     }
+}
 
 
-    // MARK: - Interactor methods
-
+extension ShowAllSpeakersInteractor: ShowAllSpeakersInteractorProtocol {
     func showAllSpeakers() {
         let entities = entityGateway.fetchAllSpeakers()
         let displayData = entities.map({entity in

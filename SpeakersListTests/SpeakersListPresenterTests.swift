@@ -28,6 +28,7 @@ class SpeakersListPresenterTests: XCTestCase {
 
     var sut: SpeakersListsPresenter!
     var view: SpeakersListViewMock!
+    var interactor: ShowAllSpeakersInteractorMock!
 
 
     // MARK: - Set up and tear down.
@@ -40,7 +41,8 @@ class SpeakersListPresenterTests: XCTestCase {
 
     func createSut() {
         view = SpeakersListViewMock()
-        sut = SpeakersListsPresenter(view: view)
+        interactor = ShowAllSpeakersInteractorMock()
+        sut = SpeakersListsPresenter(view: view, interactor: interactor)
     }
 
 
@@ -68,6 +70,15 @@ class SpeakersListPresenterTests: XCTestCase {
             "View must be set from the one provided in the initializer.")
     }
 
+
+    func testInteractorIsSetFromInitializer() {
+        XCTAssertTrue((sut.interactor as! ShowAllSpeakersInteractorMock) === interactor,
+            "Interactor must be set from the one provided in the initializer.")
+    }
+
+
+    // MARK: - Speakers List Presenter
+    
 
     func testPresentSpeakersConfiguresViewWithNumberOfRowsWithNoSpeakers() {
         sut.presentAllSpeakers([])
@@ -138,6 +149,46 @@ class SpeakersListPresenterTests: XCTestCase {
     }
 
 
+    // MARK: - Speakers List Event Handler
+
+
+    func testViewDidLoadInvokesInteractor() {
+        sut.viewDidLoad()
+        XCTAssertTrue(interactor.showAllSpeakersWasInvoked,
+            "viewDidLoad must invoke the interactor.")
+    }
+
+
+    func testPresentCellUsesCellDisplaySpeakerData() {
+        let displayData = generateOneItemOfDisplayData()
+        let cell = SpeakerTableViewCellMock()
+        sut.presentAllSpeakers(displayData)
+        sut.presentCell(cell, indexPath: NSIndexPath(forRow: 0, inSection: 0))
+        XCTAssertTrue(cell.displaySpeakerDataWasInvoked,
+            "presentCell must invoke the display method of the cell.")
+    }
+
+
+    func testPresentCellPassesFirstElementToCellDisplay() {
+        let displayData = generateOneItemOfDisplayData()
+        let cell = SpeakerTableViewCellMock()
+        sut.presentAllSpeakers(displayData)
+        sut.presentCell(cell, indexPath: NSIndexPath(forRow: 0, inSection: 0))
+        XCTAssertEqual(cell.displayedSpeakerData!, displayData[0],
+            "Displayed data must correspond to the speaker in that position")
+    }
+
+
+    func testPresentCellPassesSecondElementToCellDisplay() {
+        let displayData = generateTwoItemsOfDisplayData()
+        let cell = SpeakerTableViewCellMock()
+        sut.presentAllSpeakers(displayData)
+        sut.presentCell(cell, indexPath: NSIndexPath(forRow: 1, inSection: 0))
+        XCTAssertEqual(cell.displayedSpeakerData!, displayData[1],
+            "Displayed data must correspond to the speaker in that position")
+    }
+    
+
     // MARK: - Auxiliary methods.
 
     func generateOneItemOfDisplayData() -> [SpeakerDisplayData] {
@@ -174,6 +225,38 @@ class SpeakersListPresenterTests: XCTestCase {
 
         func addRowsAtIndexPaths(indexPaths:[NSIndexPath]) {
             self.indexPaths = indexPaths
+        }
+    }
+
+
+    class ShowAllSpeakersInteractorMock: ShowAllSpeakersInteractorProtocol {
+
+        // MARK: - Properties
+        
+        var showAllSpeakersWasInvoked = false
+
+
+        // MARK: - Mocked Methods
+        
+        func showAllSpeakers() {
+            showAllSpeakersWasInvoked = true
+        }
+    }
+
+
+    class SpeakerTableViewCellMock: SpeakerCellProtocol {
+
+        // MARK: - Properties
+        
+        var displaySpeakerDataWasInvoked = false
+        var displayedSpeakerData: SpeakerDisplayData!
+
+
+        // MARK: - Mocked Methods
+        
+        func displaySpeakerData(speaker: SpeakerDisplayData) {
+            displaySpeakerDataWasInvoked = true
+            displayedSpeakerData = speaker
         }
     }
 }

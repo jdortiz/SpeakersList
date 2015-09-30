@@ -25,4 +25,17 @@ struct SpeakerDisplayData {
         title = speaker.title
         dateSubmitted = speaker.dateSubmitted
     }
+
+
+}
+
+// MARK: - Equatable
+
+extension SpeakerDisplayData: Equatable {}
+
+func ==(lhs: SpeakerDisplayData, rhs: SpeakerDisplayData) -> Bool {
+    if lhs.name != rhs.name { return false }
+    if lhs.title != rhs.title { return false }
+    if lhs.dateSubmitted != rhs.dateSubmitted { return false }
+    return true
 }

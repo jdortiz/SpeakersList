@@ -13,3 +13,10 @@ import UIKit
 class SpeakerTableViewCell: UITableViewCell {
 
 }
+
+
+extension SpeakerTableViewCell: SpeakerCellProtocol {
+    func displaySpeakerData(speaker: SpeakerDisplayData) {
+        
+    }
+}
