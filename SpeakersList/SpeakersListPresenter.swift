@@ -16,6 +16,7 @@ class SpeakersListsPresenter {
 
     let view: SpeakersListViewProtocol
     let interactor: ShowAllSpeakersInteractorProtocol
+    lazy var currentDate = NSDate()
     internal var speakers: [SpeakerDisplayData] = []
 
 
@@ -49,8 +50,21 @@ extension SpeakersListsPresenter: SpeakersListEventHandlerProtocol {
 
     func presentCell(cell: SpeakerCellProtocol, indexPath: NSIndexPath) {
         let index = indexPath.row
-        if index < speakers.count {
-            cell.displaySpeakerData(speakers[index])
+        guard index < speakers.count else { return }
+        let speaker = speakers[index]
+        cell.displayName(speaker.name)
+        cell.displayTitle(speaker.title)
+        cell.displayDateSubmitted(relalitiveDateStringFromDate(speaker.dateSubmitted))
+    }
+
+
+    internal func relalitiveDateStringFromDate(date: NSDate) -> String {
+        let calendar = NSCalendar.currentCalendar()
+        if calendar.compareDate(date, toDate: currentDate, toUnitGranularity: NSCalendarUnit.Day) == NSComparisonResult.OrderedSame {
+            return "Today"
+        } else if calendar.compareDate(date, toDate: currentDate, toUnitGranularity: NSCalendarUnit.Month) == NSComparisonResult.OrderedSame {
+            return "This month"
         }
+        return "Long ago"
     }
 }
