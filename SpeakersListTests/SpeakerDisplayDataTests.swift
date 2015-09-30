@@ -92,6 +92,35 @@ class SpeakerDisplayDataTests: XCTestCase {
     }
 
 
+    // MARK: - Equatable
+
+    func testInstanceIsEqualToItself() {
+        XCTAssertEqual(sut, sut,
+            "A SpeakerDisplayData instance must be equal to itself.")
+    }
+
+
+    func testInstanceIsDifferentIfNameIsDifferent() {
+        XCTAssertNotEqual(sut, SpeakerDisplayData(speaker: Speaker(name: speakerAltName, title: speakerMainTitle,
+            synopsis: speakerMainSynopsis, dateSubmitted: speakerMainDateSubmitted)),
+            "SpeakerDisplayData instances must be different if the name is different.")
+    }
+
+
+    func testInstanceIsDifferentIfTitleIsDifferent() {
+        XCTAssertNotEqual(sut, SpeakerDisplayData(speaker: Speaker(name: speakerMainName, title: speakerAltTitle,
+            synopsis: speakerMainSynopsis, dateSubmitted: speakerMainDateSubmitted)),
+            "SpeakerDisplayData instances must be different if the title is different.")
+    }
+    
+
+    func testInstanceIsDifferentIfDateSubmittedIsDifferent() {
+        XCTAssertNotEqual(sut, SpeakerDisplayData(speaker: Speaker(name: speakerMainName, title: speakerMainTitle,
+            synopsis: speakerMainSynopsis, dateSubmitted: speakerAltDateSubmitted)),
+            "SpeakerDisplayData instances must be different if the date submitted is different.")
+    }
+
+
     func createAltSut() -> SpeakerDisplayData {
         return SpeakerDisplayData(speaker: Speaker(name: speakerAltName, title: speakerAltTitle,
             synopsis: speakerAltSynopsis, dateSubmitted: speakerAltDateSubmitted))

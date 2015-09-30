@@ -120,7 +120,7 @@ class SpeakersTableViewControllerTests: XCTestCase {
         }
 
 
-        func presentCell(cell: SpeakerTableViewCell, indexPath: NSIndexPath) {
+        func presentCell(cell: SpeakerCellProtocol, indexPath: NSIndexPath) {
             presentedCellWasInvoked = true
         }
     }

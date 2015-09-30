@@ -13,5 +13,5 @@ import UIKit
 
 protocol SpeakersListEventHandlerProtocol {
     func viewDidLoad()
-    func presentCell(cell: SpeakerTableViewCell, indexPath: NSIndexPath)
+    func presentCell(cell: SpeakerCellProtocol, indexPath: NSIndexPath)
 }
