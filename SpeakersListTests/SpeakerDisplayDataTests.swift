@@ -90,7 +90,7 @@ class SpeakerDisplayDataTests: XCTestCase {
 
         XCTAssertEqual(altSut.dateSubmitted, speakerAltDateSubmitted, "Date submitted must be extracted from the provided speaker.")
     }
-    
+
 
     func createAltSut() -> SpeakerDisplayData {
         return SpeakerDisplayData(speaker: Speaker(name: speakerAltName, title: speakerAltTitle,
