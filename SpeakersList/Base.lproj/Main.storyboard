@@ -51,6 +51,11 @@
                                         <constraint firstItem="AKG-Bo-Q9W" firstAttribute="leading" secondItem="pCJ-XU-egQ" secondAttribute="leading" id="zHP-IP-fqR"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="9Y4-gP-wlS" id="Z1y-sk-NuE"/>
+                                    <outlet property="nameLabel" destination="AKG-Bo-Q9W" id="hUl-ML-mEE"/>
+                                    <outlet property="titleLabel" destination="pCJ-XU-egQ" id="QhF-cl-wA7"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -20,16 +20,16 @@ class SpeakerTableViewCell: UITableViewCell {
 
 extension SpeakerTableViewCell: SpeakerCellProtocol {
     func displayName(name: String) {
-
+        nameLabel.text = name
     }
 
 
     func displayTitle(title: String) {
-
+        titleLabel.text = title
     }
 
 
     func displayDateSubmitted(date: String){
-
+        dateLabel.text = date
     }
 }
