@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF7E5DFE1BBCA8BC00229934 /* SpeakerTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7E5DFD1BBCA8BC00229934 /* SpeakerTableViewCellTests.swift */; settings = {ASSET_TAGS = (); }; };
 		CF810FAE1BB81B2F00AD15D5 /* SpeakerDisplayDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF810FAD1BB81B2F00AD15D5 /* SpeakerDisplayDataTests.swift */; settings = {ASSET_TAGS = (); }; };
 		CF810FBA1BB9219400AD15D5 /* SpeakersListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF810FB91BB9219400AD15D5 /* SpeakersListPresenter.swift */; settings = {ASSET_TAGS = (); }; };
 		CF810FBC1BB9243900AD15D5 /* SpeakersListViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF810FBB1BB9243900AD15D5 /* SpeakersListViewProtocol.swift */; settings = {ASSET_TAGS = (); }; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF7E5DFD1BBCA8BC00229934 /* SpeakerTableViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerTableViewCellTests.swift; sourceTree = "<group>"; };
 		CF810FAD1BB81B2F00AD15D5 /* SpeakerDisplayDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerDisplayDataTests.swift; sourceTree = "<group>"; };
 		CF810FB91BB9219400AD15D5 /* SpeakersListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakersListPresenter.swift; sourceTree = "<group>"; };
 		CF810FBB1BB9243900AD15D5 /* SpeakersListViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakersListViewProtocol.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				CF810FC51BB9623B00AD15D5 /* SpeakersTableViewControllerTests.swift */,
+				CF7E5DFD1BBCA8BC00229934 /* SpeakerTableViewCellTests.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF810FBF1BB9253000AD15D5 /* SpeakersListPresenterTests.swift in Sources */,
+				CF7E5DFE1BBCA8BC00229934 /* SpeakerTableViewCellTests.swift in Sources */,
 				CF810FAE1BB81B2F00AD15D5 /* SpeakerDisplayDataTests.swift in Sources */,
 				CFFD50551BB70CFB003DA319 /* ShowAllSpeakersInteractorTests.swift in Sources */,
 				CF810FC61BB9623B00AD15D5 /* SpeakersTableViewControllerTests.swift in Sources */,

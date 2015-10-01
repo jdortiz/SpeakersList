@@ -11,5 +11,7 @@ import Foundation
 
 
 protocol SpeakerCellProtocol {
-    func displaySpeakerData(speaker: SpeakerDisplayData)
+    func displayName(name: String)
+    func displayTitle(title: String)
+    func displayDateSubmitted(date: String)
 }

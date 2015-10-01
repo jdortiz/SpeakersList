@@ -21,7 +21,19 @@ class SpeakersListPresenterTests: XCTestCase {
     let speakerAltTitle = "My personal zoo"
     let speakerMainSynopsis = "Lots of knowlege gathered through the years"
     let speakerAltSynopsis = "I am not a zebra, neither are you."
-    let speakerMainDateSubmitted = NSDate(timeIntervalSince1970: 1000)
+    // Make the main date a day in the middle of the month.
+    var speakerMainDateSubmitted: NSDate {
+        get {
+            let calendar = NSCalendar.currentCalendar()
+            let components = NSDateComponents()
+            components.year = 2015
+            components.month = 8
+            components.day = 12
+            components.hour = 10
+            components.minute = 35
+            return calendar.dateFromComponents(components)!
+        }
+    }
     let speakerAltDateSubmitted = NSDate(timeIntervalSince1970: 2000)
 
     // MARK: - Test variables.
@@ -159,23 +171,17 @@ class SpeakersListPresenterTests: XCTestCase {
     }
 
 
-    func testPresentCellUsesCellDisplaySpeakerData() {
-        let displayData = generateOneItemOfDisplayData()
-        let cell = SpeakerTableViewCellMock()
-        sut.presentAllSpeakers(displayData)
-        sut.presentCell(cell, indexPath: NSIndexPath(forRow: 0, inSection: 0))
-        XCTAssertTrue(cell.displaySpeakerDataWasInvoked,
-            "presentCell must invoke the display method of the cell.")
-    }
-
-
     func testPresentCellPassesFirstElementToCellDisplay() {
         let displayData = generateOneItemOfDisplayData()
         let cell = SpeakerTableViewCellMock()
         sut.presentAllSpeakers(displayData)
         sut.presentCell(cell, indexPath: NSIndexPath(forRow: 0, inSection: 0))
-        XCTAssertEqual(cell.displayedSpeakerData!, displayData[0],
-            "Displayed data must correspond to the speaker in that position")
+        XCTAssertEqual(cell.displayedSpeakerName!, speakerMainName,
+            "Displayed name must correspond to the speaker in that position")
+        XCTAssertEqual(cell.displayedSpeakerTitle!, speakerMainTitle,
+            "Displayed title must correspond to the speaker in that position")
+//        XCTAssertEqual(cell.displayedSpeakerDateSubmitted!, speakerMainDateSubmitted,
+//            "Displayed date must correspond to the speaker in that position")
     }
 
 
@@ -184,8 +190,59 @@ class SpeakersListPresenterTests: XCTestCase {
         let cell = SpeakerTableViewCellMock()
         sut.presentAllSpeakers(displayData)
         sut.presentCell(cell, indexPath: NSIndexPath(forRow: 1, inSection: 0))
-        XCTAssertEqual(cell.displayedSpeakerData!, displayData[1],
-            "Displayed data must correspond to the speaker in that position")
+        XCTAssertEqual(cell.displayedSpeakerName!, speakerAltName,
+            "Displayed name must correspond to the speaker in that position")
+        XCTAssertEqual(cell.displayedSpeakerTitle!, speakerAltTitle,
+            "Displayed title must correspond to the speaker in that position")
+    }
+
+
+    func testDateIsTodayWhileInTSameDate() {
+        sut.currentDate = speakerMainDateSubmitted
+        let displayData = generateTwoItemsOfDisplayData()
+        let cell = SpeakerTableViewCellMock()
+        sut.presentAllSpeakers(displayData)
+        sut.presentCell(cell, indexPath: NSIndexPath(forRow: 0, inSection: 0))
+        XCTAssertEqual(cell.displayedSpeakerDateSubmitted!, "Today",
+            "Displayed date must be today when the date is in the same day.")
+    }
+
+
+    func testDateIsThisMonthIfMonthIsEqual() {
+        let calendar = NSCalendar.currentCalendar()
+        let components = NSDateComponents()
+        components.day = 1
+        guard let dateTenDaysAfter = calendar.dateByAddingComponents(components,
+            toDate:speakerMainDateSubmitted, options:NSCalendarOptions()) else {
+                XCTFail("Fail to create relative date.")
+                return
+        }
+        sut.currentDate = dateTenDaysAfter
+        let displayData = generateTwoItemsOfDisplayData()
+        let cell = SpeakerTableViewCellMock()
+        sut.presentAllSpeakers(displayData)
+        sut.presentCell(cell, indexPath: NSIndexPath(forRow: 0, inSection: 0))
+        XCTAssertEqual(cell.displayedSpeakerDateSubmitted!, "This month",
+            "Displayed date must be this month when year and month are the same.")
+    }
+
+
+    func testDateIsLongAgoIfMonthNotEqual() {
+        let calendar = NSCalendar.currentCalendar()
+        let components = NSDateComponents()
+        components.month = 2
+        guard let dateTwoMonthsAfter = calendar.dateByAddingComponents(components,
+            toDate:speakerMainDateSubmitted, options:NSCalendarOptions()) else {
+                XCTFail("Fail to create relative date.")
+                return
+        }
+        sut.currentDate = dateTwoMonthsAfter
+        let displayData = generateTwoItemsOfDisplayData()
+        let cell = SpeakerTableViewCellMock()
+        sut.presentAllSpeakers(displayData)
+        sut.presentCell(cell, indexPath: NSIndexPath(forRow: 0, inSection: 0))
+        XCTAssertEqual(cell.displayedSpeakerDateSubmitted!, "Long ago",
+            "Displayed date must be long ago when month is not the same.")
     }
     
 
@@ -248,15 +305,25 @@ class SpeakersListPresenterTests: XCTestCase {
 
         // MARK: - Properties
         
-        var displaySpeakerDataWasInvoked = false
-        var displayedSpeakerData: SpeakerDisplayData!
+        var displayedSpeakerName: String!
+        var displayedSpeakerTitle: String!
+        var displayedSpeakerDateSubmitted: String!
 
 
         // MARK: - Mocked Methods
         
-        func displaySpeakerData(speaker: SpeakerDisplayData) {
-            displaySpeakerDataWasInvoked = true
-            displayedSpeakerData = speaker
+        func displayName(name: String) {
+            displayedSpeakerName = name
+        }
+
+
+        func displayTitle(title: String) {
+            displayedSpeakerTitle = title
+        }
+
+
+        func displayDateSubmitted(date: String){
+            displayedSpeakerDateSubmitted = date
         }
     }
 }

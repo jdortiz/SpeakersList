@@ -12,11 +12,24 @@ import UIKit
 
 class SpeakerTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
 }
 
 
 extension SpeakerTableViewCell: SpeakerCellProtocol {
-    func displaySpeakerData(speaker: SpeakerDisplayData) {
-        
+    func displayName(name: String) {
+        nameLabel.text = name
+    }
+
+
+    func displayTitle(title: String) {
+        titleLabel.text = title
+    }
+
+
+    func displayDateSubmitted(date: String){
+        dateLabel.text = date
     }
 }
