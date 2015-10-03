@@ -16,3 +16,15 @@ struct Speaker {
     let synopsis: String
     let dateSubmitted: NSDate
 }
+
+// MARK: - Equatable
+
+extension Speaker: Equatable {}
+
+func ==(lhs: Speaker, rhs: Speaker) -> Bool {
+    if lhs.name != rhs.name { return false }
+    if lhs.title != rhs.title { return false }
+    if lhs.synopsis != rhs.synopsis { return false }
+    if lhs.dateSubmitted != rhs.dateSubmitted { return false }
+    return true
+}
