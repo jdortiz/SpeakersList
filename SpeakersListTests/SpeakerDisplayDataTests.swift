@@ -49,6 +49,7 @@ class SpeakerDisplayDataTests: XCTestCase {
         sut = nil
     }
 
+
     // MARK: - Tests
 
     func testSutIsntNil() {
@@ -76,7 +77,7 @@ class SpeakerDisplayDataTests: XCTestCase {
     func testTitleIsExtractedFromAltSpeaker() {
         let altSut = createAltSut()
 
-        XCTAssertEqual(altSut.title, speakerAltTitle, "Name must be extracted from the provided speaker.")
+        XCTAssertEqual(altSut.title, speakerAltTitle, "Title must be extracted from the provided speaker.")
     }
 
 
