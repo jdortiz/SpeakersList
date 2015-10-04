@@ -10,6 +10,6 @@
 import Foundation
 
 
-protocol SpeakersListPresenterProtocol {
+protocol SpeakersListPresenterProtocol: class {
     func presentAllSpeakers(speakers: [SpeakerDisplayData])
 }

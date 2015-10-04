@@ -54,7 +54,8 @@ class SpeakersListPresenterTests: XCTestCase {
     func createSut() {
         view = SpeakersListViewMock()
         interactor = ShowAllSpeakersInteractorMock()
-        sut = SpeakersListsPresenter(view: view, interactor: interactor)
+        sut = SpeakersListsPresenter(interactor: interactor)
+        sut.view = view
     }
 
 
