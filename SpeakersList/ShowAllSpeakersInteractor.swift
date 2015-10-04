@@ -15,14 +15,13 @@ class ShowAllSpeakersInteractor {
     // MARK: - Properties
 
     let entityGateway: EntityGatewayProtocol
-    let presenter: SpeakersListPresenterProtocol
+    weak var presenter: SpeakersListPresenterProtocol?
 
 
     // MARK: - Initializers
 
-    init(entityGateway: EntityGatewayProtocol, presenter: SpeakersListPresenterProtocol) {
+    init(entityGateway: EntityGatewayProtocol) {
         self.entityGateway =  entityGateway
-        self.presenter = presenter
     }
 }
 
@@ -32,6 +31,6 @@ extension ShowAllSpeakersInteractor: ShowAllSpeakersInteractorProtocol {
         let entities = entityGateway.fetchAllSpeakers()
         let displayData = entities.map({entity in
             return SpeakerDisplayData(speaker: entity)})
-        presenter.presentAllSpeakers(displayData)
+        presenter?.presentAllSpeakers(displayData)
     }
 }

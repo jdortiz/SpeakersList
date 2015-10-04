@@ -41,7 +41,8 @@ class ShowAllSpeakersInteractorTests: XCTestCase {
     func createSut() {
         entityGateway = EntityGatewayMock()
         presenter = SpeakersListPresenterMock()
-        sut = ShowAllSpeakersInteractor(entityGateway: entityGateway, presenter: presenter)
+        sut = ShowAllSpeakersInteractor(entityGateway: entityGateway)
+        sut.presenter = presenter
     }
 
     override func tearDown() {

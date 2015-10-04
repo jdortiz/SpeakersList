@@ -64,11 +64,41 @@ class RootConnectorTests: XCTestCase {
             "Initial view controller must be set in the convenience initializer.")
     }
 
+
     func testConfigureInitialViewControllerSetsVCAsRootViewController() {
         let windowMock =  WindowMock()
         sut.configureInitialViewController(windowMock)
         XCTAssertEqual(windowMock.newRootViewController, sut.initialViewController,
             "Initial view controller must be configured as the root view controller of the window.")
+    }
+
+
+    func testViewIsConnectedWithEventHandler() {
+        XCTAssertNotNil(sut.view.eventHandler,
+            "Main view controller must be connected with an event handler.")
+    }
+
+
+    func testPresenterIsConnectedWithView() {
+        let presenter = sut.view.eventHandler as? SpeakersListsPresenter
+        let view = presenter?.view as? SpeakersTableViewController
+        XCTAssertEqual(view, sut.view,
+            "Presenter must be connected with a the main view.")
+    }
+
+
+    func testPresenterIsConnectedWithInteractor() {
+        let presenter = sut.view.eventHandler as? SpeakersListsPresenter
+        XCTAssertNotNil(presenter?.interactor,
+            "Presenter must be connected with an interactor.")
+    }
+    
+
+    func testInteractorIsConnectedWithPresenter() {
+        let presenter = sut.view.eventHandler as? SpeakersListsPresenter
+        let interactor = presenter?.interactor as? ShowAllSpeakersInteractor
+        XCTAssertNotNil(interactor?.presenter,
+            "Presenter must be connected with an interactor.")
     }
 
 

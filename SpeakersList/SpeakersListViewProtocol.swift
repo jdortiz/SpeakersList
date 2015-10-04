@@ -10,7 +10,7 @@
 import Foundation
 
 
-protocol SpeakersListViewProtocol {
+protocol SpeakersListViewProtocol: class {
     func configureListWithNumberOfRows(numberOfRows: Int)
     func addRowsAtIndexPaths(indexPaths:[NSIndexPath])
 }

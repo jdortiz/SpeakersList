@@ -14,7 +14,7 @@ class SpeakersListsPresenter {
 
     // MARK: - Properties
 
-    let view: SpeakersListViewProtocol
+    weak var view: SpeakersListViewProtocol?
     let interactor: ShowAllSpeakersInteractorProtocol
     lazy var currentDate = NSDate()
     internal var speakers: [SpeakerDisplayData] = []
@@ -22,8 +22,7 @@ class SpeakersListsPresenter {
 
     // MARK: - Initializer
     
-    init(view: SpeakersListViewProtocol, interactor: ShowAllSpeakersInteractorProtocol) {
-        self.view = view
+    init(interactor: ShowAllSpeakersInteractorProtocol) {
         self.interactor = interactor
     }
 }
@@ -31,12 +30,12 @@ class SpeakersListsPresenter {
 
 extension SpeakersListsPresenter: SpeakersListPresenterProtocol {
     func presentAllSpeakers(speakers: [SpeakerDisplayData]) {
-        view.configureListWithNumberOfRows(speakers.count)
+        view?.configureListWithNumberOfRows(speakers.count)
         self.speakers = speakers
         if (speakers.count > 0) {
             let range = 0..<speakers.count
             let indexPaths = range.map({index in return NSIndexPath(forRow: index, inSection: 0)})
-            view.addRowsAtIndexPaths(indexPaths)
+            view?.addRowsAtIndexPaths(indexPaths)
         }
     }
 }
