@@ -11,7 +11,8 @@ import UIKit
 class SpeakersTableViewController: UITableViewController {
 
     // MARK: - Parameters & Constants
-    
+
+    static let storyboardIdentifier = "SpeakersTableViewController"
     static let speakerCellIdentifier = "SpeakerCell"
 
     // MARK: - Properties
