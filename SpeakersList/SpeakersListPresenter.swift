@@ -16,6 +16,7 @@ class SpeakersListsPresenter {
 
     weak var view: SpeakersListViewProtocol?
     let interactor: ShowAllSpeakersInteractorProtocol
+    var connector: RootConnector?
     lazy var currentDate = NSDate()
     internal var speakers: [SpeakerDisplayData] = []
 

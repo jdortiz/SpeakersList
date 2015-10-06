@@ -30,7 +30,6 @@ class RootConnectorTests: XCTestCase {
     func createSut() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         viewController = storyboard.instantiateViewControllerWithIdentifier(SpeakersTableViewController.storyboardIdentifier) as! SpeakersTableViewController
-//        sut = RootConnector(view: viewController)
         sut = RootConnector()
     }
 
@@ -102,6 +101,29 @@ class RootConnectorTests: XCTestCase {
     }
 
 
+    
+    func testPresenterRetainsThisConnector() {
+        let presenter = sut.view.eventHandler as? SpeakersListsPresenter
+        guard let connector = presenter?.connector else {
+            XCTFail("Presenter must have a reference to a connector.")
+            return
+        }
+        XCTAssertTrue(connector === sut!,
+            "Presenter must connect back to the connector.")
+    }
+
+    
+    func testInitializeModuleInvokesRightMethodWithSpeakerEditViewController() {
+        let speakerEditConnectorMock = SpeakerEditConnectorMock()
+        let altSut = RootConnectorMock()
+        altSut.speakerEditConnectorMock = speakerEditConnectorMock
+        altSut.initializeModuleForViewController(SpeakerEditViewController())
+
+        XCTAssertTrue(speakerEditConnectorMock.wireUpWasInvoked,
+        "Module initialization for SpeakerEditViewController invokes wireUp in the new connector.")
+    }
+
+
     class WindowMock: UIWindow {
 
         // MARK: - Properties
@@ -115,6 +137,31 @@ class RootConnectorTests: XCTestCase {
             didSet {
                 newRootViewController = rootViewController
             }
+        }
+    }
+
+
+    class RootConnectorMock: RootConnector {
+
+        // MARK: - Properties
+        var speakerEditConnectorMock: SpeakerEditConnectorMock?
+        override var ephermeralSpeakerEditConnector: SpeakerEditConnector {
+            get {
+                return speakerEditConnectorMock!
+            }
+        }
+    }
+
+    
+    class SpeakerEditConnectorMock: SpeakerEditConnector {
+    
+        var wireUpWasInvoked = false
+        override func wireUp(speakerEditViewController: SpeakerEditViewController) {
+            wireUpWasInvoked = true
+        }
+        
+        func dealloc () {
+            print("Speaker Edit Connnector DEALLOCATED")
         }
     }
 }

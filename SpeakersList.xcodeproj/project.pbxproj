@@ -26,6 +26,7 @@
 		CF810FCF1BBB126600AD15D5 /* ShowAllSpeakersInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF810FCE1BBB126600AD15D5 /* ShowAllSpeakersInteractorProtocol.swift */; settings = {ASSET_TAGS = (); }; };
 		CF810FD11BBB18A600AD15D5 /* SpeakerCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF810FD01BBB18A600AD15D5 /* SpeakerCellProtocol.swift */; settings = {ASSET_TAGS = (); }; };
 		CFE6855C1BC33EA9000C8105 /* SpeakerEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6855B1BC33EA9000C8105 /* SpeakerEditViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		CFE6855F1BC42CEC000C8105 /* SpeakerEditConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6855E1BC42CEC000C8105 /* SpeakerEditConnector.swift */; settings = {ASSET_TAGS = (); }; };
 		CFFD502A1BB5AEE2003DA319 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD50291BB5AEE2003DA319 /* AppDelegate.swift */; };
 		CFFD502C1BB5AEE2003DA319 /* SpeakersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD502B1BB5AEE2003DA319 /* SpeakersTableViewController.swift */; };
 		CFFD502F1BB5AEE2003DA319 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFD502D1BB5AEE2003DA319 /* Main.storyboard */; };
@@ -69,6 +70,7 @@
 		CF810FCE1BBB126600AD15D5 /* ShowAllSpeakersInteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAllSpeakersInteractorProtocol.swift; sourceTree = "<group>"; };
 		CF810FD01BBB18A600AD15D5 /* SpeakerCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerCellProtocol.swift; sourceTree = "<group>"; };
 		CFE6855B1BC33EA9000C8105 /* SpeakerEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerEditViewController.swift; sourceTree = "<group>"; };
+		CFE6855E1BC42CEC000C8105 /* SpeakerEditConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerEditConnector.swift; sourceTree = "<group>"; };
 		CFFD50261BB5AEE2003DA319 /* SpeakersList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakersList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFD50291BB5AEE2003DA319 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFFD502B1BB5AEE2003DA319 /* SpeakersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersTableViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				CF12EC861BC084AC00CB440C /* RootConnector.swift */,
+				CFE6855E1BC42CEC000C8105 /* SpeakerEditConnector.swift */,
 			);
 			name = Connectors;
 			sourceTree = "<group>";
@@ -324,8 +327,8 @@
 		CFFD50281BB5AEE2003DA319 /* SpeakersList */ = {
 			isa = PBXGroup;
 			children = (
-				CF12EC881BC084D200CB440C /* Connectors */,
 				CF12EC851BC0846E00CB440C /* AppDelegate */,
+				CF12EC881BC084D200CB440C /* Connectors */,
 				CF810FC31BB95FB700AD15D5 /* Views */,
 				CF810FBD1BB924F800AD15D5 /* SpeakersListPresenter */,
 				CF810FB11BB8AD8100AD15D5 /* DeliveryMechanismBoundary */,
@@ -460,6 +463,7 @@
 				CFFD504A1BB5B7DC003DA319 /* ShowAllSpeakersInteractor.swift in Sources */,
 				CFFD502C1BB5AEE2003DA319 /* SpeakersTableViewController.swift in Sources */,
 				CF8012F11BC1D66E00A47213 /* SegueHandlerTypeProtocol.swift in Sources */,
+				CFE6855F1BC42CEC000C8105 /* SpeakerEditConnector.swift in Sources */,
 				CF810FD11BBB18A600AD15D5 /* SpeakerCellProtocol.swift in Sources */,
 				CF810FBC1BB9243900AD15D5 /* SpeakersListViewProtocol.swift in Sources */,
 				CFFD50521BB703D9003DA319 /* SpeakerDisplayData.swift in Sources */,
