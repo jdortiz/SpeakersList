@@ -66,4 +66,14 @@ extension SpeakersListsPresenter: SpeakersListEventHandlerProtocol {
         }
         return "Long ago"
     }
+
+
+    func addButtonWasPressed() {
+        view?.presentAddSpeakerView()
+    }
+
+
+    func prepareAddSpeakerViewController(speakerEditViewController: SpeakerEditViewController) {
+        
+    }
 }

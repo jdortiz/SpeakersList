@@ -8,12 +8,16 @@
 
 import UIKit
 
-class SpeakersTableViewController: UITableViewController {
+class SpeakersTableViewController: UITableViewController, SegueHandlerTypeProtocol {
 
     // MARK: - Parameters & Constants
 
     static let storyboardIdentifier = "SpeakersTableViewController"
     static let speakerCellIdentifier = "SpeakerCell"
+    enum SegueIdentifier: String {
+        case AddSpeaker = "AddSpeaker"
+    }
+
 
     // MARK: - Properties
 
@@ -28,6 +32,24 @@ class SpeakersTableViewController: UITableViewController {
     }
 
 
+    // MARK: - UI Actions
+    
+    @IBAction func addButtonPressed(sender: UIBarButtonItem) {
+        eventHandler?.addButtonWasPressed()
+    }
+
+    
+    // MARK: - Segues
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let segueIdentifier = segueIdentifierForSegue(segue)
+        switch segueIdentifier {
+        case .AddSpeaker:
+            let navigationController = segue.destinationViewController as! UINavigationController
+            eventHandler?.prepareAddSpeakerViewController(navigationController.topViewController as! SpeakerEditViewController)
+        }
+    }
+    
     // MARK: - Table View Data Source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,5 +73,10 @@ extension SpeakersTableViewController: SpeakersListViewProtocol {
 
     func addRowsAtIndexPaths(indexPaths:[NSIndexPath]) {
 
+    }
+    
+    
+    func presentAddSpeakerView() {
+        performSegueWithIdentifier(SegueIdentifier.AddSpeaker, sender: self)
     }
 }

@@ -18,25 +18,25 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="63"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="acX-h4-DkT" id="Car-1m-WdS">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="62"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="62.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCJ-XU-egQ">
                                             <rect key="frame" x="8" y="8" width="34" height="20"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKG-Bo-Q9W">
                                             <rect key="frame" x="8" y="36" width="43" height="18"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Y4-gP-wlS">
                                             <rect key="frame" x="542" y="38" width="27" height="15"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -63,11 +63,39 @@
                             <outlet property="delegate" destination="zHb-h7-1ku" id="KKn-3h-heZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Speakers" id="mQL-Jb-qO5"/>
+                    <navigationItem key="navigationItem" title="Speakers" id="mQL-Jb-qO5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TZE-tf-YqO">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="zHb-h7-1ku" id="eSv-r6-0ka"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="YnH-hh-84h" kind="presentation" identifier="AddSpeaker" id="5N8-Ob-gIh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mx-Wt-QdC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1136" y="530"/>
+        </scene>
+        <!--Speaker Edit View Controller-->
+        <scene sceneID="jus-CC-bw6">
+            <objects>
+                <viewController id="DBC-xr-2Eq" customClass="SpeakerEditViewController" customModule="SpeakersList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="puQ-L4-5yY"/>
+                        <viewControllerLayoutGuide type="bottom" id="OJB-EN-X7X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vQA-xU-XeB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cvr-AA-sup"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Msx-Eg-d1x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2870" y="530"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eb2-Rk-1vc">
@@ -86,6 +114,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PaK-Rc-tHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="324" y="530"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0Pk-cz-E3t">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YnH-hh-84h" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OTB-oa-Xda">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DBC-xr-2Eq" kind="relationship" relationship="rootViewController" id="DEL-Qn-WzM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S3V-AW-RX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2022" y="530"/>
         </scene>
     </scenes>
 </document>

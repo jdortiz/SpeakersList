@@ -181,8 +181,6 @@ class SpeakersListPresenterTests: XCTestCase {
             "Displayed name must correspond to the speaker in that position")
         XCTAssertEqual(cell.displayedSpeakerTitle!, speakerMainTitle,
             "Displayed title must correspond to the speaker in that position")
-//        XCTAssertEqual(cell.displayedSpeakerDateSubmitted!, speakerMainDateSubmitted,
-//            "Displayed date must correspond to the speaker in that position")
     }
 
 
@@ -247,6 +245,14 @@ class SpeakersListPresenterTests: XCTestCase {
     }
     
 
+    
+    func testAddButtonWasPressedTellsViewToPresentAddSpeakerView() {
+        sut.addButtonWasPressed()
+        XCTAssertTrue(view.presentAddSpeakerViewWasInvoked,
+            "addButtonWasPressed must tell the view what view to present.")
+    }
+    
+
     // MARK: - Auxiliary methods.
 
     func generateOneItemOfDisplayData() -> [SpeakerDisplayData] {
@@ -273,6 +279,7 @@ class SpeakersListPresenterTests: XCTestCase {
 
         var numberOfRowsconfigured = -1
         var indexPaths: [NSIndexPath] = []
+        var presentAddSpeakerViewWasInvoked = false
 
 
         // MARK: - Mocked Methods
@@ -281,8 +288,14 @@ class SpeakersListPresenterTests: XCTestCase {
             numberOfRowsconfigured = numberOfRows
         }
 
+        
         func addRowsAtIndexPaths(indexPaths:[NSIndexPath]) {
             self.indexPaths = indexPaths
+        }
+        
+        
+        func presentAddSpeakerView() {
+            presentAddSpeakerViewWasInvoked = true
         }
     }
 
