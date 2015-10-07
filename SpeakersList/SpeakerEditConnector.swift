@@ -11,7 +11,19 @@ import Foundation
 
 
 class SpeakerEditConnector {
-    func wireUp(speakerEditViewController: SpeakerEditViewController) {
+    // MARK: - Properties
+    var view: SpeakerEditViewController!
+    var entityGateway: EntityGatewayProtocol?
+    
+    func wireUp(speakerEditViewController: SpeakerEditViewController, entityGateway: EntityGatewayProtocol) {
+        view = speakerEditViewController
+        self.entityGateway = entityGateway
+        let interactor = AddSpeakerInteractor(entityGateway: entityGateway)
+        let presenter = SpeakerAddPresenter(interactor: interactor)
         
+        view.eventHandler = presenter
+        presenter.view = view
+        interactor.presenter = presenter
+        presenter.connector = self
     }
 }

@@ -40,7 +40,8 @@ class InMemorySpeakersRepoTests: XCTestCase {
 
     func createSut() {
         data = createArrayWithOneSpeaker()
-        sut = InMemorySpeakersRepo(speakers: data)
+        sut = InMemorySpeakersRepo()
+        sut.speakers = data
     }
 
     override func tearDown() {
@@ -77,7 +78,7 @@ class InMemorySpeakersRepoTests: XCTestCase {
 
     func testFetchAllSpeakersReturnsAltInitializedEntities() {
         data = createArrayWithOneAltSpeaker()
-        sut = InMemorySpeakersRepo(speakers: data)
+        sut.speakers = data
         let returnedData = sut.fetchAllSpeakers()
         XCTAssertEqual(returnedData[0], data[0],
             "Data returned should match the data passed onto the repo.")
@@ -86,7 +87,7 @@ class InMemorySpeakersRepoTests: XCTestCase {
 
     func testFetchAllSpeakersReturnsNumberOfInitializedEntitiesWithTwoItems() {
         data = createArrayWithTwoSpeakers()
-        sut = InMemorySpeakersRepo(speakers: data)
+        sut.speakers = data
         let returnedData = sut.fetchAllSpeakers()
         XCTAssertEqual(returnedData.count, data.count,
             "Number of data returned should match the data passed onto the repo.")

@@ -124,6 +124,16 @@ class RootConnectorTests: XCTestCase {
     }
 
 
+//    
+//    func testInitializeModuleUsesExistingEntityGateway() {
+//        let speakerEditConnectorMock = SpeakerEditConnectorMock()
+//        sut = RootConnectorMock()
+//        sut.speakerEditConnectorMock = speakerEditConnectorMock
+//        sut.initializeModuleForViewController(SpeakerEditViewController())
+//    XCTAssert<#Type#>(sut, "")
+//    }
+    
+
     class WindowMock: UIWindow {
 
         // MARK: - Properties
@@ -155,12 +165,16 @@ class RootConnectorTests: XCTestCase {
     
     class SpeakerEditConnectorMock: SpeakerEditConnector {
     
+        // MARK: - Properties
+        
         var wireUpWasInvoked = false
-        override func wireUp(speakerEditViewController: SpeakerEditViewController) {
+        var entityGatewayPassed: EntityGatewayProtocol?
+        override func wireUp(speakerEditViewController: SpeakerEditViewController, entityGateway: EntityGatewayProtocol) {
             wireUpWasInvoked = true
+            entityGatewayPassed = entityGateway
         }
         
-        func dealloc () {
+        deinit {
             print("Speaker Edit Connnector DEALLOCATED")
         }
     }

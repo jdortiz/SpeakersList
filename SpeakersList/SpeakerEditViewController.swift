@@ -12,4 +12,15 @@ import UIKit
 
 class SpeakerEditViewController: UIViewController {
 
+    // MARK: - Parameters & Constants
+    
+    // MARK: - Properties
+    
+    var eventHandler: SpeakerEditEventHandlerProtocol?
+
+}
+
+
+extension SpeakerEditViewController: SpeakerEditViewProtocol {
+    
 }

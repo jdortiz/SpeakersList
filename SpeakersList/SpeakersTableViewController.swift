@@ -6,7 +6,9 @@
 //  Copyright © 2015 PoWWaU. All rights reserved.
 //
 
+
 import UIKit
+
 
 class SpeakersTableViewController: UITableViewController, SegueHandlerTypeProtocol {
 

@@ -15,19 +15,17 @@ class InMemorySpeakersRepo: EntityGatewayProtocol {
 
     // MARK: - Properties
 
-    internal var speakers: [Speaker]
+    var speakers: [Speaker] = []
     
 
 
     // MARK: - Initializer
 
-    init(speakers: [Speaker]) {
-        self.speakers = speakers
+    init() {
     }
 
 
     // MARK: - Repository methods
-
 
     func fetchAllSpeakers() -> [Speaker] {
         return speakers

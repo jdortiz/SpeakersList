@@ -19,6 +19,7 @@ class RootConnector {
 
     // MARK: - Properties
 
+    let entityGateway: EntityGatewayProtocol
     var initialViewController: UIViewController?
     var view: SpeakersTableViewController!
     var ephermeralSpeakerEditConnector: SpeakerEditConnector {
@@ -41,14 +42,15 @@ class RootConnector {
 
     init(view: SpeakersTableViewController) {
         self.view = view
-        let data = createSpeakersInitialData()
-        let entityGateway = InMemorySpeakersRepo(speakers: data)
+        let inMemorySpeakersRepo = InMemorySpeakersRepo()
+        entityGateway = inMemorySpeakersRepo
         let interactor = ShowAllSpeakersInteractor(entityGateway: entityGateway)
         let presenter = SpeakersListsPresenter(interactor: interactor)
         view.eventHandler = presenter
         interactor.presenter = presenter
         presenter.view = view
         presenter.connector = self
+        inMemorySpeakersRepo.speakers = createSpeakersInitialData()
     }
 
 
@@ -71,7 +73,7 @@ class RootConnector {
     
     func initializeSpeakerEditModule(speakerEditViewController: SpeakerEditViewController) {
         let speakerEditConnector = ephermeralSpeakerEditConnector
-        speakerEditConnector.wireUp(speakerEditViewController)
+        speakerEditConnector.wireUp(speakerEditViewController, entityGateway: entityGateway)
     }
 
 

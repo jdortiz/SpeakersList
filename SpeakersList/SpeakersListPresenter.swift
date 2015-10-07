@@ -75,6 +75,6 @@ extension SpeakersListsPresenter: SpeakersListEventHandlerProtocol {
 
 
     func prepareAddSpeakerViewController(speakerEditViewController: SpeakerEditViewController) {
-        
+        connector?.initializeModuleForViewController(speakerEditViewController)
     }
 }
