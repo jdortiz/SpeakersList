@@ -14,4 +14,6 @@ import UIKit
 protocol SpeakersListEventHandlerProtocol {
     func viewDidLoad()
     func presentCell(cell: SpeakerCellProtocol, indexPath: NSIndexPath)
+    func addButtonWasPressed()
+    func prepareAddSpeakerViewController(speakerEditViewController: SpeakerEditViewController)
 }

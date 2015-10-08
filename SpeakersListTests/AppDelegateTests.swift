@@ -64,8 +64,9 @@ class AppDelegateTests: XCTestCase {
 
     func testInitialViewControllerIsConnectedToWindowInDidFinishLaunchingWithOptions() {
         let rootConnectorMock = RootConnectorMock()
-        sut.rootConnector = rootConnectorMock
-        sut.application(UIApplication.sharedApplication(), didFinishLaunchingWithOptions: nil)
+        let altSut = AppDelegateMock()
+        altSut.rootConnectorMock = rootConnectorMock
+        altSut.application(UIApplication.sharedApplication(), didFinishLaunchingWithOptions: nil)
         XCTAssertTrue(rootConnectorMock.configureInitialViewControllerWasInvoked,
             "RootConnector must be used to bind the initial view controller to the window.")
     }
@@ -73,14 +74,27 @@ class AppDelegateTests: XCTestCase {
 
     func testInitialViewControllerIsConnectedToRightWindowInDidFinishLaunchingWithOptions() {
         let rootConnectorMock = RootConnectorMock()
-        sut.rootConnector = rootConnectorMock
-        sut.application(UIApplication.sharedApplication(), didFinishLaunchingWithOptions: nil)
-        XCTAssertEqual(sut.window, rootConnectorMock.windowConnectedToInitialViewController,
+        let altSut = AppDelegateMock()
+        altSut.rootConnectorMock = rootConnectorMock
+        altSut.application(UIApplication.sharedApplication(), didFinishLaunchingWithOptions: nil)
+        XCTAssertEqual(altSut.window, rootConnectorMock.windowConnectedToInitialViewController,
             "The initial view controller must be connected to the window in didFinishLaunchingWithOptions.")
     }
     
 
     // MARK: - Mocks & Stubs
+    
+    class AppDelegateMock: AppDelegate {
+        
+        // MARK: - Properties
+        var rootConnectorMock: RootConnectorMock?
+        override var rootConnector: RootConnector {
+            get {
+                return rootConnectorMock!
+            }
+        }
+    }
+
 
     class RootConnectorMock: RootConnector {
 

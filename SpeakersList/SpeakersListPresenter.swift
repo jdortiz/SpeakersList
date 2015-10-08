@@ -16,6 +16,7 @@ class SpeakersListsPresenter {
 
     weak var view: SpeakersListViewProtocol?
     let interactor: ShowAllSpeakersInteractorProtocol
+    var connector: RootConnector?
     lazy var currentDate = NSDate()
     internal var speakers: [SpeakerDisplayData] = []
 
@@ -65,5 +66,15 @@ extension SpeakersListsPresenter: SpeakersListEventHandlerProtocol {
             return "This month"
         }
         return "Long ago"
+    }
+
+
+    func addButtonWasPressed() {
+        view?.presentAddSpeakerView()
+    }
+
+
+    func prepareAddSpeakerViewController(speakerEditViewController: SpeakerEditViewController) {
+        connector?.initializeModuleForViewController(speakerEditViewController)
     }
 }

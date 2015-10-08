@@ -14,26 +14,19 @@ class RootConnector {
 
     // MARK: - Parameters & Constants
 
-    let speakerMainName = "Juanita Banana"
-    let speakerAltName = "Ellie Phant"
-    let speakerMainTitle = "Life and its consequences"
-    let speakerAltTitle = "My personal zoo"
-    let speakerMainSynopsis = "Lots of knowlege gathered through the years"
-    let speakerAltSynopsis = "I am not a zebra, neither are you."
-    let speakerMainDateSubmitted = NSDate(timeIntervalSince1970: 1000)
-    let speakerAltDateSubmitted = NSDate(timeIntervalSince1970: 2000)
-    
-
-    // MARK: - Parameters & Constants
-    
     static let storyboardName = "Main"
 
 
     // MARK: - Properties
 
+    let entityGateway: EntityGatewayProtocol
     var initialViewController: UIViewController?
     var view: SpeakersTableViewController!
-    
+    var ephermeralSpeakerEditConnector: SpeakerEditConnector {
+        get {
+            return SpeakerEditConnector()
+        }
+    }
 
     // MARK: - Initializers
 
@@ -46,15 +39,18 @@ class RootConnector {
         initialViewController = initialNavigationCtlr
     }
 
+
     init(view: SpeakersTableViewController) {
         self.view = view
-        let data = createSpeakersInitialData()
-        let entityGateway = InMemorySpeakersRepo(speakers: data)
+        let inMemorySpeakersRepo = InMemorySpeakersRepo()
+        entityGateway = inMemorySpeakersRepo
         let interactor = ShowAllSpeakersInteractor(entityGateway: entityGateway)
         let presenter = SpeakersListsPresenter(interactor: interactor)
         view.eventHandler = presenter
         interactor.presenter = presenter
         presenter.view = view
+        presenter.connector = self
+        inMemorySpeakersRepo.speakers = createSpeakersInitialData()
     }
 
 
@@ -63,6 +59,23 @@ class RootConnector {
     func configureInitialViewController(window: UIWindow) {
         window.rootViewController = initialViewController
     }
+
+
+    func initializeModuleForViewController(viewController: UIViewController) {
+        switch viewController {
+        case is SpeakerEditViewController:
+            initializeSpeakerEditModule(viewController as! SpeakerEditViewController)
+        default:
+            fatalError("Unexpected UIViewController subclass.")
+        }
+    }
+    
+    
+    func initializeSpeakerEditModule(speakerEditViewController: SpeakerEditViewController) {
+        let speakerEditConnector = ephermeralSpeakerEditConnector
+        speakerEditConnector.wireUp(speakerEditViewController, entityGateway: entityGateway)
+    }
+
 
     private func createSpeakersInitialData() -> [Speaker] {
         return [ Speaker(name: "Dr. Evil", title: "How to Conquer the World",

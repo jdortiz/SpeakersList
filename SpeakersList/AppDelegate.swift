@@ -16,8 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Properties
 
     var window: UIWindow?
-    lazy var rootConnector: RootConnector = RootConnector()
-
+    var rootConnector: RootConnector {
+        get {
+            return RootConnector()
+        }
+    }
 
     // MARK: - Application Delegate
 

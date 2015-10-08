@@ -77,6 +77,43 @@ class SpeakersTableViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.numberOfRows, 2, "Number of rows must be set with the configuration method.")
     }
 
+    
+    // MARK: - UI Actions
+    
+    
+    func testAddButtonPressedNotifiesEventHandler() {
+        sut.addButtonPressed(UIBarButtonItem())
+        XCTAssertTrue(eventHandler.addButtonWasPressedWasInvoked,
+            "addButtonPressent must notify the event handler.")
+    }
+    
+    
+    // MARK: - Segues
+
+    func testPresentAddSpeakerViewPerformsSegue() {
+        let altSut = SpeakersTableViewControllerMock()
+        altSut.presentAddSpeakerView()
+        XCTAssertNotNil(altSut.performSegueWithIdentifier,
+            "PresentAddSpeakerView should perform a segue to present the view controller.")
+    }
+    
+    
+    func testPresentAddSpeakerViewPerformsSegueWithExpectedIdentifier() {
+        let altSut = SpeakersTableViewControllerMock()
+        altSut.presentAddSpeakerView()
+        XCTAssertEqual(altSut.performSegueWithIdentifier, SpeakersTableViewController.SegueIdentifier.AddSpeaker.rawValue,
+            "PresentAddSpeakerView should perform the right segue to present the view controller.")
+    }
+    
+    
+    func testAddSpeakerSegueTellsEventHandlerToConfigureViewController() {
+        sut.performSegueWithIdentifier(SpeakersTableViewController.SegueIdentifier.AddSpeaker,
+            sender: nil)
+        XCTAssertTrue(eventHandler.prepareAddSpeakerViewControllerWasInvoked,
+            "AddSpeaker segue must result in the event handler configuring the view controller.")
+    }
+    
+
 
     // MARK: - Table View Data Source
 
@@ -111,6 +148,9 @@ class SpeakersTableViewControllerTests: XCTestCase {
 
         var viewDidLoadWasInvoked = false
         var presentedCellWasInvoked = false
+        var addButtonWasPressedWasInvoked = false
+        var prepareAddSpeakerViewControllerWasInvoked = false
+
 
 
         // MARK: - Mocked methods
@@ -122,6 +162,31 @@ class SpeakersTableViewControllerTests: XCTestCase {
 
         func presentCell(cell: SpeakerCellProtocol, indexPath: NSIndexPath) {
             presentedCellWasInvoked = true
+        }
+
+
+        func addButtonWasPressed() {
+            addButtonWasPressedWasInvoked = true
+        }
+        
+        
+        func prepareAddSpeakerViewController(speakerEditViewController: SpeakerEditViewController) {
+            prepareAddSpeakerViewControllerWasInvoked = true
+        }
+    }
+
+
+    class SpeakersTableViewControllerMock: SpeakersTableViewController {
+
+        // MARK: - Properties
+
+        var performSegueWithIdentifier: String?
+        
+        
+        // MARK: - Mocked methods
+        
+        override func performSegueWithIdentifier(identifier: String, sender: AnyObject?) {
+            performSegueWithIdentifier = identifier
         }
     }
 }

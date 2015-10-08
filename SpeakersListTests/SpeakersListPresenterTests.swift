@@ -181,8 +181,6 @@ class SpeakersListPresenterTests: XCTestCase {
             "Displayed name must correspond to the speaker in that position")
         XCTAssertEqual(cell.displayedSpeakerTitle!, speakerMainTitle,
             "Displayed title must correspond to the speaker in that position")
-//        XCTAssertEqual(cell.displayedSpeakerDateSubmitted!, speakerMainDateSubmitted,
-//            "Displayed date must correspond to the speaker in that position")
     }
 
 
@@ -245,7 +243,26 @@ class SpeakersListPresenterTests: XCTestCase {
         XCTAssertEqual(cell.displayedSpeakerDateSubmitted!, "Long ago",
             "Displayed date must be long ago when month is not the same.")
     }
+
     
+    func testAddButtonWasPressedTellsViewToPresentAddSpeakerView() {
+        sut.addButtonWasPressed()
+        XCTAssertTrue(view.presentAddSpeakerViewWasInvoked,
+            "addButtonWasPressed must tell the view what view to present.")
+    }
+
+    
+    
+    func testPrepareAddSpeakerViewControllerInvokesConnector() {
+        let speakerEditViewController = SpeakerEditViewController()
+        let connector = ConnectorMock()
+        sut.connector = connector
+        sut.prepareAddSpeakerViewController(speakerEditViewController)
+        XCTAssertTrue((connector.viewController as! SpeakerEditViewController) == speakerEditViewController,
+            "Connector must be invoked with the view controller provided to the presenter.")
+    }
+    
+
 
     // MARK: - Auxiliary methods.
 
@@ -273,6 +290,7 @@ class SpeakersListPresenterTests: XCTestCase {
 
         var numberOfRowsconfigured = -1
         var indexPaths: [NSIndexPath] = []
+        var presentAddSpeakerViewWasInvoked = false
 
 
         // MARK: - Mocked Methods
@@ -281,8 +299,14 @@ class SpeakersListPresenterTests: XCTestCase {
             numberOfRowsconfigured = numberOfRows
         }
 
+        
         func addRowsAtIndexPaths(indexPaths:[NSIndexPath]) {
             self.indexPaths = indexPaths
+        }
+        
+        
+        func presentAddSpeakerView() {
+            presentAddSpeakerViewWasInvoked = true
         }
     }
 
@@ -325,6 +349,21 @@ class SpeakersListPresenterTests: XCTestCase {
 
         func displayDateSubmitted(date: String){
             displayedSpeakerDateSubmitted = date
+        }
+    }
+
+
+    class ConnectorMock: RootConnector {
+        
+        // MARK: - Properties
+        
+        var viewController: UIViewController?
+        
+        
+        // MARK: - Mocked methods
+        
+        override func initializeModuleForViewController(viewController: UIViewController) {
+            self.viewController = viewController
         }
     }
 }
