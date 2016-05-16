@@ -11,7 +11,7 @@ import UIKit
 
 
 protocol SegueHandlerTypeProtocol {
-    typealias SegueIdentifier: RawRepresentable
+    associatedtype SegueIdentifier: RawRepresentable
 }
 
 
